@@ -6,6 +6,8 @@
 
 // [[Rcpp::plugins(cpp14)]]
 
+//' Create a simple two by two matrix with a rarray
+//'
 //' @export
 // [[Rcpp::export]]
 xt::rarray<double> two_by_two_rarray() {
@@ -19,6 +21,7 @@ xt::rarray<double> two_by_two_rarray() {
   return x;
 }
 
+//' Create a simple two by two matrix with a rtensor
 //' @export
 // [[Rcpp::export]]
 xt::rtensor<double, 2> two_by_two_rtensor() {
@@ -32,6 +35,10 @@ xt::rtensor<double, 2> two_by_two_rtensor() {
   return x;
 }
 
+//' Take in an R object, and add 1 to it
+//'
+//' @param x A numeric R object
+//'
 //' @export
 // [[Rcpp::export]]
 xt::rarray<double> plus_one(xt::rarray<double> x) {
