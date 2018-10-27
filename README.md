@@ -6,8 +6,9 @@
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
-`xcursion` is a package that uses the headers from `xtensorrr` to show
-off a few examples using `xtensor` and `xtensor-r`.
+`xcursion` is a package that uses the headers from
+[`xtensorrr`](https://github.com/DavisVaughan/xtensorrr) to show off a
+few examples using `xtensor` and `xtensor-r`.
 
 ## Installation
 
