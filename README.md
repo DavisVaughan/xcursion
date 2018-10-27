@@ -75,3 +75,50 @@ plus_one(1:5)
 plus_one(1:5 + 1) # <- this is fine
 #> [1] 3 4 5 6 7
 ```
+
+Broadcastable sum
+
+``` r
+vec <- c(1, 2, 3, 4, 5)
+m1 <- matrix(vec, ncol = 1)
+m2 <- matrix(vec * 2, ncol = 1)
+
+m3 <- cbind(m1, m2)
+
+# Adding two matrices normally
+xt_sum(m1, m2)
+#>      [,1]
+#> [1,]    3
+#> [2,]    6
+#> [3,]    9
+#> [4,]   12
+#> [5,]   15
+
+# Colwise broadcast
+xt_sum(m1, m3)
+#>      [,1] [,2]
+#> [1,]    2    3
+#> [2,]    4    6
+#> [3,]    6    9
+#> [4,]    8   12
+#> [5,]   10   15
+
+# Outer sum
+xt_sum(m1, t(m1))
+#>      [,1] [,2] [,3] [,4] [,5]
+#> [1,]    2    3    4    5    6
+#> [2,]    3    4    5    6    7
+#> [3,]    4    5    6    7    8
+#> [4,]    5    6    7    8    9
+#> [5,]    6    7    8    9   10
+
+# A vector is a 1 row matrix
+# so we get the same result as above
+xt_sum(m1, vec)
+#>      [,1] [,2] [,3] [,4] [,5]
+#> [1,]    2    3    4    5    6
+#> [2,]    3    4    5    6    7
+#> [3,]    4    5    6    7    8
+#> [4,]    5    6    7    8    9
+#> [5,]    6    7    8    9   10
+```
