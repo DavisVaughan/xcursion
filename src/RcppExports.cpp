@@ -37,11 +37,24 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// xt_sum
+xt::rarray<double> xt_sum(xt::rarray<double> x, xt::rarray<double> y);
+RcppExport SEXP _xcursion_xt_sum(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< xt::rarray<double> >::type x(xSEXP);
+    Rcpp::traits::input_parameter< xt::rarray<double> >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(xt_sum(x, y));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_xcursion_two_by_two_rarray", (DL_FUNC) &_xcursion_two_by_two_rarray, 0},
     {"_xcursion_two_by_two_rtensor", (DL_FUNC) &_xcursion_two_by_two_rtensor, 0},
     {"_xcursion_plus_one", (DL_FUNC) &_xcursion_plus_one, 1},
+    {"_xcursion_xt_sum", (DL_FUNC) &_xcursion_xt_sum, 2},
     {NULL, NULL, 0}
 };
 

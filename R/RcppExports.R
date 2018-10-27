@@ -23,3 +23,12 @@ plus_one <- function(x) {
     .Call(`_xcursion_plus_one`, x)
 }
 
+#' Broadcast sum
+#'
+#' @param x,y Numeric vectors, matrices, or arrays
+#'
+#' @export
+xt_sum <- function(x, y) {
+    .Call(`_xcursion_xt_sum`, x, y)
+}
+

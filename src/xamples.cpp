@@ -1,6 +1,4 @@
-#include "xtensor-r/rcontainer.hpp"
-#include "xtensor-r/rarray.hpp"
-#include "xtensor-r/rtensor.hpp"
+#include "xcursion.h"
 
 #include <Rcpp.h>
 
@@ -46,4 +44,15 @@ xt::rarray<double> plus_one(xt::rarray<double> x) {
   xt::rarray<double> x_plus_1 = x + 1;
 
   return x_plus_1;
+}
+
+//' Broadcast sum
+//'
+//' @param x,y Numeric vectors, matrices, or arrays
+//'
+//' @export
+// [[Rcpp::export]]
+xt::rarray<double> xt_sum(xt::rarray<double> x, xt::rarray<double> y) {
+  xt::rarray<double> res = x + y;
+  return res;
 }
