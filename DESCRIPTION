@@ -1,0 +1,20 @@
+Package: xcursion
+Title: Examples With 'xtensor'
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Davis",
+           family = "Vaughan",
+           role = c("aut", "cre"),
+           email = "davis@rstudio.com")
+Description: Provides some xtensor examples.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+LinkingTo: 
+    Rcpp,
+    xtensorrr
+Imports: 
+    Rcpp
+RoxygenNote: 6.1.0.9000
+Remotes:
+    DavisVaughan/xtensorrr
