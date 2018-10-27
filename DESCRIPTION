@@ -18,3 +18,5 @@ Imports:
 RoxygenNote: 6.1.0.9000
 Remotes:
     DavisVaughan/xtensorrr
+URL: https://github.com/DavisVaughan/xcursion
+BugReports: https://github.com/DavisVaughan/xcursion/issues
