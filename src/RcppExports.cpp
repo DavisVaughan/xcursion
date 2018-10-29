@@ -49,12 +49,35 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// xt_dim
+int xt_dim(xt::rarray<double> x);
+RcppExport SEXP _xcursion_xt_dim(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< xt::rarray<double> >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(xt_dim(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// xt_shape_ex
+bool xt_shape_ex();
+RcppExport SEXP _xcursion_xt_shape_ex() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(xt_shape_ex());
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_xcursion_two_by_two_rarray", (DL_FUNC) &_xcursion_two_by_two_rarray, 0},
     {"_xcursion_two_by_two_rtensor", (DL_FUNC) &_xcursion_two_by_two_rtensor, 0},
     {"_xcursion_plus_one", (DL_FUNC) &_xcursion_plus_one, 1},
     {"_xcursion_xt_sum", (DL_FUNC) &_xcursion_xt_sum, 2},
+    {"_xcursion_xt_dim", (DL_FUNC) &_xcursion_xt_dim, 1},
+    {"_xcursion_xt_shape_ex", (DL_FUNC) &_xcursion_xt_shape_ex, 0},
     {NULL, NULL, 0}
 };
 

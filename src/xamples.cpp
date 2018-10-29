@@ -1,8 +1,8 @@
-#include "xcursion.h"
+#include <xtensor-r/rarray.hpp>
+#include <xtensor-r/rtensor.hpp>
+#include <xtensor/xarray.hpp>
 
 #include <Rcpp.h>
-
-// [[Rcpp::plugins(cpp14)]]
 
 //' Create a simple two by two matrix with a rarray
 //'
@@ -54,5 +54,23 @@ xt::rarray<double> plus_one(xt::rarray<double> x) {
 // [[Rcpp::export]]
 xt::rarray<double> xt_sum(xt::rarray<double> x, xt::rarray<double> y) {
   xt::rarray<double> res = x + y;
+  return res;
+}
+
+// [[Rcpp::export]]
+int xt_dim(xt::rarray<double> x) {
+  size_t d = x.dimension();
+  return d;
+}
+
+// [[Rcpp::export]]
+bool xt_shape_ex() {
+  using array_type = xt::xarray<double>;
+  using shape_type = array_type::shape_type;
+  shape_type shape = {3, 2, 4};
+  array_type a(shape);
+  size_t d = a.dimension();
+  const shape_type& s = a.shape();
+  bool res = (d == shape.size()) && (s == shape);
   return res;
 }

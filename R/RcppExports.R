@@ -32,3 +32,11 @@ xt_sum <- function(x, y) {
     .Call(`_xcursion_xt_sum`, x, y)
 }
 
+xt_dim <- function(x) {
+    .Call(`_xcursion_xt_dim`, x)
+}
+
+xt_shape_ex <- function() {
+    .Call(`_xcursion_xt_shape_ex`)
+}
+
